@@ -1,0 +1,32 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+}
+@model List<Datos>
+
+<form>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Nombre</th>
+                <th scope="col">Genero</th>
+                <th scope="col">Ubicacion</th>
+                <th scope="col">Correo Electronico</th>
+                <th scope="col">Fotografia</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var datos in Model)
+            {
+                <tr>
+                    <td>@datos.name.tittle + ' ' + @datos.name.first + ' ' + @datos.name.last</td>
+                    <td>@datos.gender</td>
+                    <td>@datos.location.street.name + ' ' + @datos.location.street.number </td>
+                    <td>@datos.email </td>
+                    <td>@datos.picture </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</form>
+
